@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang='en-CA'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Focusd</title>
+        <link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/tomorrow-night-bright.min.css">
+        <link rel='stylesheet' type='text/css' href='demo.css'>
+        <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
+        <script src='../focusd.min.js' charset='utf-8'></script>
+        <script>
+            $(document).ready(function() {
+                
+                $('#everything').focusd();
+
+                $('#linksonly').focusd({
+                    elementGroups: ['links']
+                });
+                
+                $('#formsAndEditables').focusd({
+                    elementGroups: ['forms', 'contenteditables'],
+                    classname: 'filled'
+                });
+                
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Focusd Demo Page</h1>
+
+        <p>Focus and unfocus on various elements on this page to see how Focusd works.</p>
+
+        <section>
+            <h2>Default (everything)</h2>
+
+            <div>
+                <p>In this section, everything that has received focus will be outlined in red.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope='col'>Links</th>
+                            <th scope='col'>Form elements</th>
+                            <th scope='col'><code>Contenteditable</code> elements</th>
+                            <th scope='col'><code>Tabindex</code>-enabled element:</th>
+                        </tr>
+                    </thead>
+                    <tbody id='everything'>
+                        <tr>
+                            <td>
+                                <p><a href='https://google.ca/'>Google</a></p>
+                                <p><a href='https://facebook.com/'>Facebook</a></p>
+                            </td>
+                            <td>
+                                <p><label>Select box: 
+                                        <select>
+                                            <option>Pick me!</option>
+                                            <option>Or me!</option>
+                                        </select>
+                                    </label></p>
+
+                                <p><label>Text box: <input type='text'></label></p>
+                                <p><label>Checkbox: <input type='checkbox'></label></p>
+                                <p><label>Radio button: <input type='radio'></label></p>
+                                <p><label>Button: <input type='button' value='Click me!'></label></p>
+                                <p><label>Number: <input type='number'></label></p>
+                                <p><label>Password: <input type='password'></label></p>
+                                <p><label>File: <input type='file'></label></p>
+
+                                <p><label>Textarea: <textarea>Hello world!</textarea></label></p>
+                            </td>
+                            <td contenteditable>Edit me!</td>
+                            <td>
+                                <p tabindex=-1>Click/tap me to focus.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section>
+                <h3>Code</h3>
+                <pre><code class='language-javascript'>$('#everything').focusd();</code></pre>
+            </section>
+        </section>
+
+        <section>
+            <h2>Links only</h2>
+
+            <div>
+                <p>In this section, links that has received focus will have an orange background.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope='col'>Links</th>
+                            <th scope='col'>Form elements</th>
+                            <th scope='col'><code>Contenteditable</code> elements</th>
+                            <th scope='col'><code>Tabindex</code>-enabled element:</th>
+                        </tr>
+                    </thead>
+                    <tbody id='linksonly'>
+                        <tr>
+                            <td>
+                                <p><a href='https://google.ca/'>Google</a></p>
+                                <p><a href='https://facebook.com/'>Facebook</a></p>
+                            </td>
+                            <td>
+                                <p><label>Select box: 
+                                        <select>
+                                            <option>Pick me!</option>
+                                            <option>Or me!</option>
+                                        </select>
+                                    </label></p>
+
+                                <p><label>Text box: <input type='text'></label></p>
+                                <p><label>Checkbox: <input type='checkbox'></label></p>
+                                <p><label>Radio button: <input type='radio'></label></p>
+                                <p><label>Button: <input type='button' value='Click me!'></label></p>
+                                <p><label>Number: <input type='number'></label></p>
+                                <p><label>Password: <input type='password'></label></p>
+                                <p><label>File: <input type='file'></label></p>
+
+                                <p><label>Textarea: <textarea>Hello world!</textarea></label></p>
+                            </td>
+                            <td contenteditable>Edit me!</td>
+                            <td>
+                                <p tabindex=-1>Click/tap me to focus.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section>
+                <h3>Code</h3>
+                <pre><code class='language-javascript'>$('#linksonly').focusd({ elementGroups: ['links'] });</code></pre>
+            </section>
+        </section>
+
+        <section>
+            <h2>Forms and <code>contenteditable</code>s</h2>
+
+            <div>
+                <p>In this section, all forms and <code>contenteditable</code> elements that has received focus will be outlined in green. In addition, the focusd elements will receive a class of <var>filled</var> instead of the default class "focusd".</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope='col'>Links</th>
+                            <th scope='col'>Form elements</th>
+                            <th scope='col'><code>Contenteditable</code> elements</th>
+                            <th scope='col'><code>Tabindex</code>-enabled element:</th>
+                        </tr>
+                    </thead>
+                    <tbody id='formsAndEditables'>
+                        <tr>
+                            <td>
+                                <p><a href='https://google.ca/'>Google</a></p>
+                                <p><a href='https://facebook.com/'>Facebook</a></p>
+                            </td>
+                            <td>
+                                <p><label>Select box: 
+                                        <select>
+                                            <option>Pick me!</option>
+                                            <option>Or me!</option>
+                                        </select>
+                                    </label></p>
+
+                                <p><label>Text box: <input type='text'></label></p>
+                                <p><label>Checkbox: <input type='checkbox'></label></p>
+                                <p><label>Radio button: <input type='radio'></label></p>
+                                <p><label>Button: <input type='button' value='Click me!'></label></p>
+                                <p><label>Number: <input type='number'></label></p>
+                                <p><label>Password: <input type='password'></label></p>
+                                <p><label>File: <input type='file'></label></p>
+
+                                <p><label>Textarea: <textarea>Hello world!</textarea></label></p>
+                            </td>
+                            <td contenteditable>Edit me!</td>
+                            <td>
+                                <p tabindex=-1>Click/tap me to focus.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section>
+                <h3>Code</h3>
+                <pre><code class='language-javascript'>$('#formsAndEditables').focusd({
+    elementGroups: ['forms', 'contenteditables'],
+    classname: 'filled'
+});</code></pre>
+            </section>
+        </section>
+    </body>

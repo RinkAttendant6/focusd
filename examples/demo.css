@@ -1,0 +1,64 @@
+html {
+    font-family: 'Segoe UI', Ubuntu, sans-serif;
+}
+
+body > section {
+    width: 95%;
+    margin: 0 auto 1em;
+    border: medium solid #ccc;
+}
+
+section > h2:first-child {
+    color: #fff;
+    font-weight: normal;
+    background-color: navy;
+    margin: 0;
+    padding: 0.3em 0.3em 0.3em 0.6em;
+}
+
+section > div {
+    padding: 0 1em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    width: 25%;
+    padding: 0.5em;
+    border: 1px solid #111;
+    vertical-align: top;
+}
+
+td p {
+    margin: 0.1em;
+}
+
+section > section {
+    background-color: #aaa;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+section > section > h3 {
+    margin: 0;
+}
+
+pre {
+    margin-bottom: 0;
+}
+
+/* Focusd styles */
+#everything .focusd {
+    outline: thick solid red;
+}
+
+#linksonly .focusd {
+    background-color: orange;
+}
+
+#formsAndEditables .filled {
+    outline: medium solid green;
+}
