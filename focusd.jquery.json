@@ -1,0 +1,27 @@
+{
+    "name": "focusd",
+    "title": "Focusd",
+    "description": "jQuery plugin to mark elements that have been focused on.",
+    "keywords": [
+        "focus",
+        "blur",
+        "form",
+        "link"
+    ],
+    "version": "0.1.1",
+    "author": {
+        "name": "Vincent Diep"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/RinkAttendant6/focusd/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/RinkAttendant6/focusd/issues",
+    "homepage": "https://github.com/RinkAttendant6/focusd",
+    "docs": "https://github.com/RinkAttendant6/focusd",
+    "dependencies": {
+        "jquery": ">=1.4.3"
+    }
+}
