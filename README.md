@@ -61,3 +61,7 @@ An object can be passed to the initializer to specify configuration options:
  - classname : String
 
    *Default: `'focusd'`* The name of the class given to elements that have received focus. This class is added after focus is removed from the element.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/RinkAttendant6/focusd/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
