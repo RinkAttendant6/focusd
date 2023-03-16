@@ -16,6 +16,8 @@
         var defaults, settings, groups, elements = '', collection, i;
         
         defaults = {
+            onRecieveFocus: false,
+            onLoseFocus: true,
             elementGroups: ['links', 'forms', 'contenteditables', 'tabindexed'],
             classname: 'focusd'
         };
@@ -42,8 +44,15 @@
         }
         
         return collection.each(function(){
+            $(this).focusin(function(){
+                if (settings.onRecieveFocus){
+                    $(this).addClass(settings.classname);
+                }
+            });
             $(this).focusout(function(){
-                $(this).addClass(settings.classname);
+                if (settings.onLoseFocus){
+                    $(this).addClass(settings.classname);
+                }
             });
         });
     };
